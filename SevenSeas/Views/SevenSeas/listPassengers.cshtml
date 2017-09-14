@@ -1,0 +1,94 @@
+﻿@model IEnumerable<SevenSeas.adbPassenger>
+
+@{
+    ViewBag.Title = "Passengers";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Passengers</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            First Name
+        </th>
+        <th>
+            Surname
+        </th>
+        <th>
+            Address
+        </th>
+        <th>
+            City
+        </th>
+        <th>
+            County
+        </th>
+        <th>
+            Postcode
+        </th>
+        <th>
+            Country
+        </th>
+        <th>
+            Phone
+        </th>
+        <th>
+            E-mail
+        </th>
+        <th>
+            Gender
+        </th>
+        <th>
+            Date of Birth
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.first_name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.last_name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.address)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.city)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.county)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.postcode)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.country)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.phone)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.email)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.gender)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DOB)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.PassengerID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.PassengerID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.PassengerID })
+        </td>
+    </tr>
+}
+
+</table>
