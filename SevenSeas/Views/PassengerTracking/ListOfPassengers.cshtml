@@ -1,0 +1,58 @@
+﻿@model IEnumerable<SevenSeas.BEANS.TrackingBEAN>
+
+@{
+    ViewBag.Title = "ListOfPassengers";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>ListOfPassengers</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.PassengerName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TimeBoard)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.BoardPort)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TimeAlight)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.AlightPort)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.PassengerName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TimeBoard)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.BoardPort)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TimeAlight)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.AlightPort)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.TrackingID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.TrackingID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.TrackingID })
+        </td>
+    </tr>
+}
+
+</table>
